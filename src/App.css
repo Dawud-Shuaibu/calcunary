@@ -1,0 +1,49 @@
+/* Light Mode Colors */
+:root {
+  --header-bgcolor: #f5f5f5;
+  --body-color: #e5f1f6;
+  --text-color: #000;
+  --main-elements-bgcolor: #fff;
+  --buttons-box-bgcolor: #f0f3f4;
+  --border-color: #000;
+  --first-render-items-transition: all ease-in-out 100ms;
+}
+
+/* Darkmode Colors */
+.darkmode {
+  --header-bgcolor: #262626;
+  --body-color: #262626;
+  --text-color: #fff;
+  --main-elements-bgcolor: #333333;
+  --buttons-box-bgcolor: #262626;
+  --border-color: #fff;
+}
+
+* {
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all ease-in-out 200ms;
+  border-color: var(--border-color);
+}
+
+main {
+  background-color: var(--main-elements-bgcolor);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--body-color);
+  transition: var(--first-render-items-transition);
+}
+
+svg {
+  fill: #000;
+}
+
+.darkmode svg {
+  fill: #fff;
+}

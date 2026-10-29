@@ -1,0 +1,258 @@
+:root {
+  --buttons-bgcolor: #fff;
+  --buttons-hover-bgcolor: #f3f3f3;
+  --operators-buttons-bgcolor: #f3f3f3;
+  --operators-hover-bgcolor: #fff;
+  --buttons-shadow: 0 0 8.5px -4px #000;
+  --button-radius: 6px;
+}
+
+.darkmode {
+  --buttons-bgcolor: #404040;
+  --buttons-hover-bgcolor: #2e2e2e;
+  --operators-buttons-bgcolor: #2e2e2e;
+  --operators-hover-bgcolor: #404040;
+  --buttons-shadow: 0 0 7px -4px #000;
+  --button-radius: 4px;
+}
+
+/* STANDARD CALC */
+.standard-main {
+  width: 100vw;
+  height: 100vh;
+  padding: 50px 50px 0;
+  background-color: var(--main-elements-bgcolor);
+  transition: var(--first-render-items-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.standard-main .calc-screen-box {
+  width: 80%;
+  height: auto;
+  padding: 20px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.standard-main .calc-state {
+  width: 80%;
+  font-size: 15px;
+  text-align: right;
+  font-weight: 500;
+  background-color: transparent;
+  transition: var(--first-render-items-transition);
+}
+
+.standard-main .display {
+  width: 80%;
+  text-align: right;
+  font-size: 60px;
+  font-weight: 400;
+  background-color: transparent;
+  transition: var(--first-render-items-transition);
+  overflow: auto hidden;
+}
+
+/* Calculator Buttons Container */
+.standard-main .buttons-box {
+  width: 80%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 30px;
+  justify-self: flex-start;
+  display: grid;
+  grid-template-rows: 80px 80px 80px 80px 80px;
+  grid-template-columns: auto auto auto auto;
+  gap: 7px;
+  background-color: transparent;
+  transition: var(--first-render-items-transition);
+}
+
+/* ALL BUTTONS */
+.buttons-box button {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  border: 0;
+  box-shadow: var(--buttons-shadow);
+  background-color: var(--buttons-bgcolor);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: var(--first-render-items-transition);
+}
+
+.buttons-box button:hover {
+  background-color: var(--buttons-hover-bgcolor);
+}
+
+/* OPERATING BUTTONS */
+.buttons-box .divide,
+.buttons-box .multiply,
+.buttons-box .subtract,
+.buttons-box .add {
+  background-color: var(--operators-buttons-bgcolor);
+  box-shadow: 0 0 8.5px -4px #303030;
+}
+
+.buttons-box .divide:hover,
+.buttons-box .multiply:hover,
+.buttons-box .subtract:hover,
+.buttons-box .add:hover {
+  background-color: var(--operators-hover-bgcolor);
+}
+
+/* EQUAL BUTTON */
+.buttons-box .equal {
+  box-sizing: border-box;
+  padding: 0 0 7px 0;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  background-color: #0067b8;
+}
+
+.buttons-box .equal:hover {
+  background-color: #055694;
+}
+
+/* ALL BUTTONS GRID POSITIONS */
+.nine {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.eight {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.seven {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.six {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.five {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.four {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.three {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.two {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.one {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.zero {
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.point {
+  grid-area: 5 / 3 / 6 / 4;
+}
+
+/* OPERATORS */
+.divide {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.multiply {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.subtract {
+  grid-area: 3 / 4 / 4 / 5;
+}
+
+.add {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
+/* EQUAL SIGN BUTTON */
+.equal {
+  grid-area: 5 / 4 / 6 / 5;
+}
+
+@media (max-width: 1024px) {
+  .standard-main .buttons-box,
+  .standard-main .calc-screen-box,
+  .standard-main .display {
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  .standard-main .calc-screen-box {
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .standard-main {
+    padding-inline: 20px;
+  }
+
+  .standard-main .calc-state,
+  .standard-main .display {
+    padding-inline: 10px;
+  }
+
+  .standard-main .buttons-box {
+    grid-template-columns: 24% 24% 24% 24%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .standard-main .calc-screen-box {
+    padding-block: 10px;
+    padding-inline: 0;
+  }
+
+  .standard-main .display {
+    font-size: 50px;
+  }
+}
+
+@media (max-height: 640px) {
+  .standard-main .calc-state {
+    font-size: 12px;
+    padding-bottom: 0;
+    line-height: 4;
+  }
+
+  .standard-main .display {
+    font-size: 50px;
+  }
+
+  .standard-main .buttons-box {
+    grid-template-rows: 35px 35px 35px 35px 35px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+
+  .equal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .standard-main .buttons-box {
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+.currency-main {
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+}
+
+.currency-main div {
+  width: auto;
+  height: auto;
+  padding: 50px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 1.5pc;
+  text-align: center;
+  font-style: italic;
+  border-block-width: 2px;
+  border-block-color: #fff;
+  border-block-style: dotted;
+}

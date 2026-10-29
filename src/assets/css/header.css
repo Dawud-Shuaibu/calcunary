@@ -1,0 +1,40 @@
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  background-color: var(--header-bgcolor);
+  box-shadow: 0 0 10px -6px #000;
+}
+
+header h4 {
+  margin-left: 25px;
+  font-size: 17.5px;
+  font-weight: 500;
+}
+
+.menu-button {
+  margin-right: 22px;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background-color: #0067b8;
+  svg {
+    fill: #fff;
+  }
+}
+
+@media only screen and (max-height: 725px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}

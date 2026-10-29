@@ -1,0 +1,153 @@
+:root {
+  --menu-bgcolor: #fff;
+  --options-hover-color: #e3e2e2;
+}
+
+.darkmode {
+  --menu-bgcolor: #333333;
+  --options-hover-color: #4d4c4c;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden auto;
+  height: 100vh;
+  z-index: 100;
+  background-color: var(--menu-bgcolor);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px -5px #000;
+}
+
+/* Set all divs in menu to 100% width */
+.menu div {
+  width: 100%;
+}
+
+.darkmode .menu button:hover {
+  box-shadow: 0 0 6px -4px #000;
+}
+
+/* Header Div */
+.menu .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 20px 19px;
+}
+
+.menu-header div {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.menu-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.menu-header button {
+  padding: 6px;
+  border-radius: 100%;
+}
+
+.menu-header button svg {
+  display: flex;
+  align-content: center;
+}
+
+.menu-header button:hover {
+  background-color: var(--options-hover-color);
+}
+
+.menu-header .theme-btn svg:nth-child(2) {
+  display: none;
+}
+
+.menu-header .theme-btn:hover {
+  svg:nth-child(1) {
+    display: none;
+  }
+  svg:nth-child(2) {
+    display: block;
+  }
+}
+
+.menu-header .close-menu-btn {
+  padding: 4px;
+}
+
+.menu .close-menu-btn svg {
+  zoom: 1.17;
+}
+
+/* Calculators type options box */
+.menu .options-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  row-gap: 10px;
+}
+
+.menu .options-box h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.menu .calculators div,
+.menu .converters div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  row-gap: 5px;
+}
+
+/* Default styling for all button/options inside all divs excluding the first div */
+.menu .options-box .menu-option,
+.menu .about-btn-box button {
+  width: 95%;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  position: relative;
+}
+
+.menu .options-box .menu-option:hover,
+.menu .about-btn-box button:hover {
+  background-color: var(--options-hover-color);
+}
+
+.menu .options-box .menu-options svg,
+.menu .about-btn-box button svg {
+  zoom: 0.9;
+}
+
+/* Settings box at the bottom edge */
+.menu .about-btn-box {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 0 8px -5px #000;
+}
+
+@media (max-width: 640px) {
+  .menu {
+    max-width: 250px;
+  }
+}
